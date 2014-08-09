@@ -13,19 +13,19 @@ echo "$INFO $(date "+%d/%b/%Y:%H:%M:%S") checkvpn.sh started" >> $LOG
 sleep 180
 while true
 do
-  if ping -c 1 192.168.100.1
+  if ping -c 1 www.facebook.com
   then
     n=1
   else
     sleep 60
     echo "$INFO $(date "+%d/%b/%Y:%H:%M:%S") vpn is down. Re-check at 1st time." >> $LOG
-    if ping -c 1 192.168.100.1
+    if ping -c 1 www.facebook.com
     then
       n=2
     else
       sleep 60
       echo "$INFO $(date "+%d/%b/%Y:%H:%M:%S") vpn is down. Re-check at 2nd times." >> $LOG
-      if ping -c 1 192.168.100.1
+      if ping -c 1 www.facebook.com
       then
         n=3
       else
